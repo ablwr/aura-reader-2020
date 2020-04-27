@@ -3,14 +3,17 @@
 <meta charset="utf-8">
 <head>
   <link rel="stylesheet" type="text/css" href="assets/css.css">
+  <link href="https://fonts.googleapis.com/css2?family=Iceland&display=swap" rel="stylesheet"> 
   <script type="text/javascript" src="assets/face-api.js"></script>
   <script type="text/javascript" src="assets/reading.js"></script>
 </head>
 <body>
-  <div class="container">
-    <input type="button" value="run" onclick="{run()}"><br><br>
-    <video onplay="onPlay(this)" id="inputVideo" autoplay muted width="640" height="480" style=" border: 1px solid #ddd;"></video><br>
-    <canvas id="overlay" width="640" height="480" style="position:relative; top:-487px; border: 4px solid black;" ></canvas><br>
+  <h1>aura reader 2020</h1>
+  <div class="readerContainer">
+    <video onplay="onPlay(this)" id="inputVideo" autoplay muted width="640" height="480"></video><br>
+    <canvas id="overlay" width="640" height="480" ></canvas><br>
   </div>
+  <button class="runButton" value="run" onclick="{run()}">run</button>
+  <footer>👋 <a href="https://github.com/ablwr/aura-reader-2020">source</a></footer>
 </body>
 </html>

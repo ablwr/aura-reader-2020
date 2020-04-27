@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<head>
+  <link rel="stylesheet" type="text/css" href="css.css">
+  <script type="text/javascript" src="assets/face-api.js"></script>
+  <script type="text/javascript" src="assets/reading.js"></script>
+</head>
+<body>
+  <div class="container">
+    <input type="button" value="run" onclick="{run()}"><br><br>
+    <video onplay="onPlay(this)" id="inputVideo" autoplay muted width="640" height="480" style=" border: 1px solid #ddd;"></video><br>
+    <canvas id="overlay" width="640" height="480" style="position:relative; top:-487px; border: 4px solid black;" ></canvas><br>
+  </div>
+</body>
+</html>

@@ -148,7 +148,7 @@ function createAura(result){
 
   // right side
   ctx[0].appendAura({
-    position: [[x+w+100, y+(h/2)-200]],
+    position: [[x+w+100, y+(h/2)-100]],
     radius: h+150,
     color: randColors[0].toString(),
     colDelta: 0,
@@ -158,7 +158,7 @@ function createAura(result){
 
   // left side
   ctx[0].appendAura({
-    position: [[x-100, y+(h/2)-200]],
+    position: [[x-100, y+(h/2)-100]],
     radius: h+150,
     color: randColors[1].toString(),
     colDelta: 0,
@@ -182,7 +182,7 @@ function createAura(result){
   // throat
   ctx[0].appendAura({
     position: [[x+(w/2), y+h]],
-    radius: w,
+    radius: w-50,
     color: randColors[4].toString(),
     colDelta: 0,
     auraCircles: 1,
@@ -210,10 +210,6 @@ var colorMixer = function(){
 };
 
 
-
-
-
-
 // set colors and counter once, here
 randColors = colorMixer();
 let counter = 0
@@ -224,11 +220,12 @@ async function onPlay() {
 
   let result = await faceapi.detectSingleFace(vidElement, options).withFaceLandmarks(true)
 
-  if (result && counter < 80) {
-    createAura(result)
-    counter++
-  } else {
-    stop()
+  if (result) {
+    if (counter < 120) {
+      createAura(result)
+      counter++
+      console.log(counter)
+    } else { stop() }
   }
 
   setTimeout(() => onPlay())

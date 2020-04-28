@@ -12,11 +12,11 @@ body {
   font-family: 'Montserrat Alternates', sans-serif;
 }
 
-h1 {
+h1, .portrait h3, .colors h3 {
   box-sizing: border-box;
   padding: 0.1em;
   border: none;
-  font-size: 5.55em;
+  font-size: 4em;
   font-family: 'Iceland', cursive;
   color: rgba(255,255,255,1);
   text-decoration: normal;
@@ -34,12 +34,11 @@ h1:hover {
 button {
   color: white;
   font-size: 2em;
-  border-color: rgb(165, 255, 76);
+  font-family: 'Montserrat Alternates', sans-serif;
   padding: 0.2em 2em 0.2em 2em;
   text-align: center;
   line-height: 3rem;
-  letter-spacing: .2em;
-  text-transform: uppercase;
+  letter-spacing: .1em;
   text-decoration: none;
   white-space: nowrap;
   background-color: transparent;

@@ -128,22 +128,7 @@ var colors = [
                ['255,255,255'], // white
               ];
 
-var colorMixer = function(){
-  var arr = [];
-  for (var i = 0; i < 6; i++) {
-    arr.push(colors[Math.floor(Math.random() * Math.floor(11))])
-  }
-  return arr;
-};
-randColors = colorMixer();
-
-// start the party!
-async function onPlay() {
-  const vidElement = document.getElementById('inputVideo')
-  const options = new faceapi.TinyFaceDetectorOptions({ inputSize: 128, scoreThreshold : 0.3 }) 
-
-  result = await faceapi.detectSingleFace(vidElement, options).withFaceLandmarks(true)
-  if (result) {
+function createAura(result){
 
   var canvasArr = document.querySelectorAll("canvas");
   var ctx = [];
@@ -212,11 +197,42 @@ async function onPlay() {
     colDelta: 0,
     auraCircles: 1,
     ratio_circles_x: 0,
-  });  
-}
-setTimeout(() => onPlay())
+  });
+
 }
 
+var colorMixer = function(){
+  var arr = [];
+  for (var i = 0; i < 6; i++) {
+    arr.push(colors[Math.floor(Math.random() * Math.floor(11))])
+  }
+  return arr;
+};
+
+
+
+
+
+
+// set colors and counter once, here
+randColors = colorMixer();
+let counter = 0
+// start the party!
+async function onPlay() {
+  const vidElement = document.getElementById('inputVideo')
+  const options = new faceapi.TinyFaceDetectorOptions({ inputSize: 128, scoreThreshold : 0.3 })
+
+  let result = await faceapi.detectSingleFace(vidElement, options).withFaceLandmarks(true)
+
+  if (result && counter < 80) {
+    createAura(result)
+    counter++
+  } else {
+    stop()
+  }
+
+  setTimeout(() => onPlay())
+}
 
 // lets go
 async function run() {
@@ -225,4 +241,14 @@ async function run() {
    const stream = await navigator.mediaDevices.getUserMedia({video:{}})
    const vidElement = document.getElementById('inputVideo')
    vidElement.srcObject = stream
+}
+
+async function stop(){
+  const vidElement = document.getElementById('inputVideo')
+  const stream = vidElement.srcObject;
+  const tracks = stream.getTracks();
+
+  tracks.forEach(function(track) {
+    track.stop();
+  });
 }

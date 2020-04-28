@@ -35,7 +35,7 @@ button {
   color: white;
   font-size: 2em;
   font-family: 'Montserrat Alternates', sans-serif;
-  padding: 0.2em 2em 0.2em 2em;
+  padding: 0.2em 0.8em 0.2em 0.8em;
   text-align: center;
   line-height: 3rem;
   letter-spacing: .1em;
@@ -47,7 +47,7 @@ button {
   border: 1px solid #bbb;
   cursor: pointer;
   box-sizing: border-box;
-  margin: 0.6em;
+  margin: 0.666em;
   box-shadow: 4px 4px aliceblue;
 }
 
@@ -171,4 +171,23 @@ small {
 
 li {
   padding-top: 0.8em;
+}
+
+#counter {
+  float: left;
+  padding: 1em;
+  margin: 2em;
+  border-radius: 100%;
+  background: rgba(200,200,255,0.3);
+  color: aliceblue;
+  font-size: 1.5em;
+  display: none;
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+}
+
+.hide {
+  opacity: 0;
+  transition: opacity 1000ms;
 }

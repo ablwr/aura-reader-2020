@@ -212,7 +212,7 @@ var colorMixer = function(){
 
 // set colors and counter once, here
 randColors = colorMixer();
-let counter = 0
+let counter = 100
 // start the party!
 async function onPlay() {
   const vidElement = document.getElementById('inputVideo')
@@ -221,11 +221,17 @@ async function onPlay() {
   let result = await faceapi.detectSingleFace(vidElement, options).withFaceLandmarks(true)
 
   if (result) {
-    if (counter < 120) {
+    if (counter > 0) {
       createAura(result)
-      counter++
-      console.log(counter)
-    } else { stop() }
+      counter--
+      let view = document.getElementById('counter')
+      view.style.display = "block"
+      view.innerHTML = counter.toString()
+
+      if (counter == 0) {
+        view.classList.add('hide')
+      }
+    }
   }
 
   setTimeout(() => onPlay())

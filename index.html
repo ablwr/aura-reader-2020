@@ -11,6 +11,8 @@
 </head>
 <body>
   <h1><i class="fas fa-hand-sparkles fa-flip-horizontal"></i> aura reader 2020 <i class="fas fa-hand-sparkles"></i></h1>
+  <aside id="counter"></aside>
+
   <div class="readerContainer">
     <video onplay="onPlay(this)" id="inputVideo" autoplay muted width="640" height="480"></video><br>
     <canvas id="overlay" width="640" height="480" ></canvas><br>
@@ -18,7 +20,7 @@
 
   <div class="buttons">
     <button class="runButton" value="run" onclick="{run()}">catch your aura</button>
-    
+    <button class="stopButton" value="run" onclick="{stop()}"><i class="fas fa-user-times"></i></button>
     <div class="tooltip">
       <button class="infoButton" value="run" onclick=""><i class="fas fa-question-circle"></i></button>
       <div class="top">
@@ -30,6 +32,7 @@
           <li>Take a deep breath, count to 5</li>
           <li>Your aura will appear around you (and freeze after 120 frames)</li>
           <li>Use the guide below to interpret the results</li>
+          <li><small>This image is ephemeral! Please take a screenshot if you want to save it for later!</small></li>
         </ul>
       </div>
     </div>

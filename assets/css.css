@@ -162,6 +162,10 @@ strong {
   font-size: 1.3em;
 }
 
+small {
+  font-style: italic;
+}
+
 .big {
   font-size: 2em;
 }

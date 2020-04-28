@@ -9,7 +9,7 @@ body {
   background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
   min-height: 100vh;
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat Alternates', sans-serif;
 }
 
 h1 {
@@ -29,10 +29,6 @@ h1 {
 
 h1:hover {
   text-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #00ffff , 0 0 70px #00ffff , 0 0 80px #00ffff , 0 0 100px #00ffff ;
-}
-
-.readerContainer {
-  /*background-color: black;*/
 }
 
 button {
@@ -121,7 +117,7 @@ footer {
   transform: translate(-30%,-100%);
   padding: 0 1em 0 1em;
   color: #ffffff;
-  background-color: purple;
+  background: rgba(90,0,90,0.9);
   font-weight: normal;
   border-radius: 0.75em;
   position: absolute;
@@ -141,18 +137,35 @@ footer {
   margin: 0.5em;
 }
 
-h3 {
+.explainer h3 {
   font-size: 2em;
+  background: rgba(90,90,90,0.3);
 }
 
 .explainer {
   margin: 4em;
   display: grid;
-  grid-gap: 8em;
+  grid-gap: 6em;
   grid-template-columns: 1fr 1fr;
   font-size: 1.25em;
 }
 
 .portrait, .colors {
   margin: 2em;
+  padding: 2em;
+  background: rgba(90,0,90,0.2);
+  border-radius: 0.75em;
+}
+
+strong {
+  font-weight: 800;
+  font-size: 1.3em;
+}
+
+.big {
+  font-size: 2em;
+}
+
+li {
+  padding-top: 0.8em;
 }
